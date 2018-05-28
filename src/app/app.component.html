@@ -1,20 +1,61 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!-- 导航栏布局 -->
+<nav class="navbar navbar-expand-md navbar-dark">
+  <!-- 导航栏logo -->
+  <a class="navbar-brand" href="#">zzBlog</a>
+  <!-- 小屏设备响应式菜单按钮 -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+  <!-- 菜单布局 -->
+  <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+    <ul class="navbar-nav"
+        *ngFor="let nav of navs">
+      <li class="nav-item"><a [ngClass]="{'nav-link': true, active: nav.tag === currentNav.tag}" href="/{{nav.tag}}">{{nav.name}}</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <div>
+    <form class="form-inline float-right">
+      <input class="form-control" type="text" placeholder="搜你所想">
+      <button class="btn btn-success" type="button">搜索</button>
+    </form>
+  </div>
+  <!-- 分割线 -->
+  <hr color="white"/>
+  <!-- 背景音乐 -->
+  <audio src="../assets/audio/逆流成河（恶魔神）.mp3" controls> 你的浏览不支持audio标签 </audio>
+  <!-- 正文
+	正文是转载的一篇关于kotlin单例模式的文章，内容样式在css文件里
+	在正文编辑过程中，主要很麻烦的地方是代码片段
+	同时它也是篇幅最长的地方，基本上每一个单词都是通过span修饰的
+	仿照相关博客网站编辑，让代码更具有可读性
+	以下文章部分不再注释。。（太多了） -->
+  <div class="row">
+    <div class="col-sm-8">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-sm-4">
+      <h3 id="label">标签</h3>
+      <!-- 标签列表 -->
+      <ul id="tags">
+        <li><a href="#android">Android</a></li>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#kotlin">Kotlin</a></li>
+        <li><a href="#html">Html</a></li>
+        <li><a href="#javaScript">JavaScript</a></li>
+        <li><a href="#css">Css</a></li>
+        <li><a href="#c#">C#</a></li>
+        <li><a href="#c">C</a></li>
+        <li><a href="#c++">C++</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<!-- 分割线 -->
+<footer class="footer">
+  <hr color="white"/>
+  <div class="container">
+    <!-- copyright -->
+    <p>Copyright 2018 @zzzz1997 <a class="link" href="https://github.com/zzzz1997/">Github</a>. | 蜀ICP备 18012900号</p>
+  </div>
+</footer>

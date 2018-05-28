@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+/* CSS Document */
+
+/* 主背景风格 */
+html, body {
+  margin: auto;
+  height: 100%;
+  max-width: 980px;
+}
+
+html {
+  background-color: #333;
+}
+
+body {
+  background: transparent;
+}
+
+/* p标签样式 */
+p {
+  color: white;
+}
+
+/* p标签中a样式 */
+p a {
+  color: white;
+}
+
+/* h2标签样式 */
+h1, h2 {
+  color: white;
+  font-weight: bold;
+}
+
+/* 代码段的样式 */
+pre {
+  background-color: lightgray;
+}
+
+/* blockquote标签样式 */
+blockquote {
+  background-color: lightgray;
+  padding: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-style: italic;
+  border-left: 5px solid deepskyblue;
+}
+
+/* 引言的样式 */
+blockquote p {
+  color: dimgray;
+}
+
+/* 分割线样式 */
+hr {
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 列表的样式 */
+ul {
+  color: white;
+}

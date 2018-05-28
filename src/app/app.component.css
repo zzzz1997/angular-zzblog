@@ -1,0 +1,120 @@
+/* CSS Document */
+
+.container {
+  min-height: 100%;
+}
+
+/* 调整logo字体大小 */
+.navbar-brand {
+  font-size: 2em;
+}
+
+/* 调整导航栏边距 */
+.nav-item {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* 导航栏item的标签激活时样式 */
+.nav-item a.active {
+  background-color: #555;
+  color: white;
+}
+
+/* 导航栏item的标签鼠标聚焦时样式 */
+.nav-item a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* 标签样式 */
+#label {
+  padding: 10px;
+  color: aliceblue;
+}
+
+/* 标签列表样式 */
+#tags {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* 标签列表item样式 */
+#tags li {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+/* 标签列表item字体样式 */
+#tags li a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* footer样式 */
+.footer {
+  clear: both;
+  text-align: center;
+}
+
+/* footer中p样式 */
+.footer p {
+  color: rgba(255, 255, 255, .5);
+}
+
+/* github链接颜色 */
+.link {
+  color: rgba(255, 255, 255, .7);
+}
+
+/* 白色字体 */
+.white-text {
+  color: white;
+}
+
+/* 加粗字体 */
+.bold-text {
+  font-weight: bold;
+}
+
+/* 斜体字样式 */
+.italic-text {
+  font-style: italic;
+}
+
+/* 代码段布局 */
+.code {
+  margin-left: 20px;
+  margin-right: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: lightgray;
+}
+
+/* 关键字样式 */
+.keyword {
+  color: mediumvioletred;
+}
+
+/* 类方法字体样式 */
+.fun-text {
+  color: dodgerblue;
+}
+
+/* 变量字体样式 */
+.var-text {
+  color: midnightblue;
+}
+
+/* 字符串字体样式 */
+.str-text {
+  color: limegreen;
+}
+/* 数字字体样式 */
+.num-text {
+  color: orangered;
+}

@@ -23,9 +23,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./src/assets/source/css/arduino-light.css",
+              "./src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/assets/source/js/canvas-nest.min.js"
+            ]
           },
           "configurations": {
             "production": {

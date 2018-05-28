@@ -1,0 +1,11 @@
+<ul *ngIf="articles">
+  <li class="card" *ngFor="let article of articles">
+    <div class="card-body">
+      <h4 class="card-title"><a href="/article/{{article.id}}" class="card-link">{{article.title}}</a></h4>
+      <p class="card-text">{{article.description}}</p>
+      <img class="rounded-circle img-fluid" src="{{article.authorIcon}}">
+      <a href="#" class="user-link">{{article.authorName}}</a>
+      <p>{{article.createdAt}}</p>
+    </div>
+  </li>
+</ul>

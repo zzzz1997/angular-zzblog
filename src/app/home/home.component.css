@@ -1,0 +1,21 @@
+ul {
+  padding: 0;
+  margin:20px 0;
+}
+
+.card p {
+  color: #555555;
+}
+
+.card img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.card .user-link {
+  color: #555555;
+}
+
+.card .user-link:hover {
+  color: steelblue;
+}
