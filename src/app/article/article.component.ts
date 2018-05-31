@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as marked from 'marked';
 import * as highlight from 'highlight.js';
@@ -19,8 +19,7 @@ export class ArticleComponent implements OnInit {
   convertedData;
 
   constructor(private route: ActivatedRoute,
-              private articleService: ArticleService,
-              private renderer2: Renderer2) { }
+              private articleService: ArticleService) { }
 
   ngOnInit() {
     this.getArticle();

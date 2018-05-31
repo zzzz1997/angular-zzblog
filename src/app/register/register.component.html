@@ -23,7 +23,25 @@
   <div *ngIf="!isPasswordRight" class="alert alert-danger">
     <strong>错误!</strong> 密码应大于六个字符
   </div>
+  <div class="form-group">
+    <label>再次输入密码：</label>
+    <input #passwordAgain
+           type="password"
+           class="form-control"
+           placeholder="请再次输入密码"
+           (keyup.enter)="checkPasswordEqually(password.value, passwordAgain.value)"
+           (blur)="checkPasswordEqually(password.value, passwordAgain.value)">
+  </div>
+  <div *ngIf="!isPasswordEqually" class="alert alert-danger">
+    <strong>错误!</strong> 两次输入的密码应该一致
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox">
+      我已仔细阅读并接受<a href="/agreement">zzblog用户服务协议</a>
+    </label>
+  </div>
   <button type="button"
-          class="btn btn-primary">登录</button>
-  <a class="float-right register">还没有账号？<a href="/register">注册一个</a></a>
+          class="btn btn-primary">注册</button>
+  <a class="float-right login">已有账号？<a href="/login">去登录</a></a>
 </form>

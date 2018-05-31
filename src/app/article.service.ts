@@ -26,7 +26,7 @@ export class ArticleService {
    * @returns {Observable<Article[]>} 文章数组
    */
   getTopList(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.topUrl + '/list', httpOptions)
+    return this.http.get<Article[]>(this.topUrl + '/top', httpOptions)
       .pipe(
         catchError(this.handleError('getTopList', []))
       );

@@ -1,0 +1,62 @@
+/*超大PC屏幕下的专用样式*/
+@media screen and (min-width:1200px) {
+  .display {
+    display: inline;
+  }
+}
+/*中等PC屏幕下的专用样式*/
+@media screen and (min-width:992px) and (max-width: 1199px) {
+  .display {
+    display: inline;
+  }
+}
+/*PAD屏幕下的专用样式*/
+@media screen and (min-width: 768px) and (max-width:991px ){
+  .display {
+    display: inline;
+  }
+}
+/*PHONE屏幕下的专用样式*/
+@media screen and (min-width: 0px) and (max-width:767px ) {
+  .display {
+    display: none;
+  }
+}
+
+.card p {
+  color: #555555;
+}
+
+.card img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.card .user-link {
+  color: #555555;
+}
+
+.card .user-link:hover {
+  color: steelblue;
+}
+
+.card .admin {
+  margin-left: 5px;
+  padding: 2px;
+  color: gold;
+  font-size: 10px;
+  border: 2px solid gold;
+  border-radius: 8px;
+}
+
+.card .follow {
+  margin-left: 5px;
+  padding: 5px;
+  color: red;
+  border: 2px solid red;
+  border-radius: 8px;
+}
+
+.card .follow:hover {
+  background-color: #cccccc;
+}
