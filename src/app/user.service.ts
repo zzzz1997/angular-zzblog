@@ -8,8 +8,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class UserService {
 
-  private userUrl = 'http://localhost:3000/user';
-  // private userUrl = 'https://api.zzzz1997.com/user';
+  // private userUrl = 'http://localhost:3000/user';
+  private userUrl = 'https://api.zzzz1997.com/user';
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class UserService {
    * @param username 用户名
    * @returns {Observable<any>} 返回信息
    */
-  isUserExist(username): Observable<any>  {
+  isUserExist(username): Observable<any> {
     return this.http.get(this.userUrl + '/isExist/' + username)
       .pipe(
         catchError(this.handleError('isUserExist', []))

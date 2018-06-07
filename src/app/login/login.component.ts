@@ -67,6 +67,7 @@ export class LoginComponent implements OnInit {
           };
           this.cookieService.putObject('user', user, options);
           this.cookieService.put('token', token, options);
+          alert('登录成功');
           this.router.navigateByUrl('home');
         } else {
           alert(data.message);

@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   private getTopList(): void {
     this.articleService.getTopList()
       .subscribe((data) => {
-        this.articles = data['articles'];
+        this.articles = data['data']['articles'];
       }, (error) => {
         console.error(error);
       });
