@@ -50,11 +50,12 @@ export class ArticleComponent implements OnInit {
           sanitize: false,
           smartLists: true,
           smartypants: false,
+          // codeClassPrefix: '',
         });
         marked.setOptions({
-          highlight: function (code) {
+          /*highlight: function (code) {
             return highlight.highlightAuto(code).value;
-          }
+          },*/
         });
         this.convertedData = marked(data.toString());
       }, error => {

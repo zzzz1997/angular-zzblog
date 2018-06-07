@@ -35,13 +35,31 @@
   <div *ngIf="!isPasswordEqually" class="alert alert-danger">
     <strong>错误!</strong> 两次输入的密码应该一致
   </div>
+  <div class="form-group">
+    <label>请输入验证码：</label>
+    <input #verification
+           type="text"
+           class="form-control col-sm-6"
+           placeholder="请输入下方验证码"
+           (keyup.enter)="checkVerification(verification.value)"
+           (blur)="checkVerification(verification.value)">
+    <app-verification #verificationComponent
+                      class="col-sm-6"
+                      (notify)="onVerificationNotify($event)"></app-verification>
+  </div>
+  <div *ngIf="!isVerificationRight" class="alert alert-danger">
+    <strong>错误!</strong> 验证码应该为四位
+  </div>
   <div class="form-check">
     <label class="form-check-label">
-      <input class="form-check-input" type="checkbox">
+      <input #agree
+             class="form-check-input"
+             type="checkbox">
       我已仔细阅读并接受<a href="/agreement">zzblog用户服务协议</a>
     </label>
   </div>
   <button type="button"
-          class="btn btn-primary">注册</button>
+          class="btn btn-primary"
+          (click)="registerUser(username.value, password.value, passwordAgain.value, verification.value, agree.checked, verificationComponent)">注册</button>
   <a class="float-right login">已有账号？<a href="/login">去登录</a></a>
 </form>

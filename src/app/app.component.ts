@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { CookieService } from 'ngx-cookie';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit {
 
   currentNav = {tag: 'default'};
 
-  constructor(private location: Location) {}
+  constructor(private location: Location,
+              private cookieService: CookieService) {}
 
   ngOnInit() {
     this.initView();

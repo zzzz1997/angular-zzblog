@@ -23,7 +23,23 @@
   <div *ngIf="!isPasswordRight" class="alert alert-danger">
     <strong>错误!</strong> 密码应大于六个字符
   </div>
+  <div class="form-group">
+    <label>请输入验证码：</label>
+    <input #verification
+           type="text"
+           class="form-control col-sm-6"
+           placeholder="请输入下方验证码"
+           (keyup.enter)="checkVerification(verification.value)"
+           (blur)="checkVerification(verification.value)">
+    <app-verification #verificationComponent
+                      class="col-sm-6"
+                      (notify)="onVerificationNotify($event)"></app-verification>
+  </div>
+  <div *ngIf="!isVerificationRight" class="alert alert-danger">
+    <strong>错误!</strong> 验证码应该为四位
+  </div>
   <button type="button"
-          class="btn btn-primary">登录</button>
+          class="btn btn-primary"
+          (click)="loginUser(username.value, password.value, verification.value, verificationComponent)">登录</button>
   <a class="float-right register">还没有账号？<a href="/register">注册一个</a></a>
 </form>

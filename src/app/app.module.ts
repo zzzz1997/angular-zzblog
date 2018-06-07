@@ -10,6 +10,7 @@ import { ArticleComponent } from './article/article.component';
 import { RegisterComponent } from './register/register.component';
 import { AgreementComponent } from './agreement/agreement.component';
 import { VerificationComponent } from './verification/verification.component';
+import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { VerificationComponent } from './verification/verification.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CookieModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
