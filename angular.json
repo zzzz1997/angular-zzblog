@@ -24,7 +24,6 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./src/assets/source/css/arduino-light.css",
               "./src/styles.css"
             ],
             "scripts": [

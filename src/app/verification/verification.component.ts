@@ -1,4 +1,4 @@
-import {Component, ElementRef, Output, EventEmitter, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, Output, EventEmitter, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-verification',

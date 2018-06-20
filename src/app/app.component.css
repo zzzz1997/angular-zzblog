@@ -27,6 +27,44 @@
   color: white;
 }
 
+/* 网易云音乐样式 */
+.cloud-music {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hikotoko {
+  position: relative;
+  margin: 0 50px;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'å¾®è½¯é›…é»‘', Arial, sans-serif;
+}
+
+.bracket-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+}
+
+.hitokoto-content {
+  margin: 0;
+  padding: 15px 50px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.bracket-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.5rem;
+}
+
+.hitokoto-from {
+  text-align: right;
+}
+
 /* footer样式 */
 .footer {
   clear: both;

@@ -1,4 +1,4 @@
-import {Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as marked from 'marked';
 import * as highlight from 'highlight.js';
@@ -10,7 +10,8 @@ import { User } from '../user';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['../../../src/assets/source/css/arduino-light.css', './article.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ArticleComponent implements OnInit {
 
@@ -53,9 +54,9 @@ export class ArticleComponent implements OnInit {
           // codeClassPrefix: '',
         });
         marked.setOptions({
-          /*highlight: function (code) {
+          highlight: function (code) {
             return highlight.highlightAuto(code).value;
-          },*/
+          },
         });
         this.convertedData = marked(data.toString());
       }, error => {

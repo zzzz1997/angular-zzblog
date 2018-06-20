@@ -23,7 +23,19 @@
   <!-- 分割线 -->
   <hr color="white"/>
   <!-- 背景音乐 -->
-  <audio src="../assets/audio/逆流成河（恶魔神）.mp3" controls> 你的浏览不支持audio标签 </audio>
+  <iframe class="cloud-music"
+          frameborder="no"
+          marginwidth="0"
+          marginheight="0"
+          height=86
+          src="https://music.163.com/outchain/player?type=2&id=26386807&auto=0&height=66"></iframe>
+  <div *ngIf="hitokoto" class="hikotoko">
+    <p class="bracket-left">『</p>
+    <p class="hitokoto-content">{{hitokoto.hitokoto}}</p>
+    <p class="bracket-right">』</p>
+    <p class="hitokoto-from">——（{{hitokoto.text}}）「{{hitokoto.from}}」</p>
+  </div>
+
   <!-- 正文
 	正文是转载的一篇关于kotlin单例模式的文章，内容样式在css文件里
 	在正文编辑过程中，主要很麻烦的地方是代码片段

@@ -11,6 +11,9 @@ import { RegisterComponent } from './register/register.component';
 import { AgreementComponent } from './agreement/agreement.component';
 import { VerificationComponent } from './verification/verification.component';
 import { CookieModule } from 'ngx-cookie';
+import { CommentComponent } from './comment/comment.component';
+import { WriteComponent } from './write/write.component';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { CookieModule } from 'ngx-cookie';
     ArticleComponent,
     RegisterComponent,
     AgreementComponent,
-    VerificationComponent
+    VerificationComponent,
+    CommentComponent,
+    WriteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CookieModule.forRoot()
+    CookieModule.forRoot(),
+    QuillModule
   ],
   providers: [],
   bootstrap: [AppComponent]

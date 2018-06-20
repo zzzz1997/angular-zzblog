@@ -18,5 +18,8 @@
   <div class="col-sm-9">
     <div #converted [innerHTML]="convertedData">
     </div>
+    <div *ngIf="article">
+      <app-comment [articleId]="article.id"></app-comment>
+    </div>
   </div>
 </div>
