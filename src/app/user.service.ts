@@ -8,8 +8,8 @@ import { catchError } from 'rxjs/operators';
 })
 export class UserService {
 
-  // private userUrl = 'http://localhost:3000/user';
-  private userUrl = 'https://api.zzzz1997.com/user';
+  private userUrl = 'http://localhost:3000/user';
+  // private userUrl = 'https://api.zzzz1997.com/user';
 
   constructor(private http: HttpClient) { }
 

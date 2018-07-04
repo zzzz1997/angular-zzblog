@@ -19,6 +19,7 @@
     <div #converted [innerHTML]="convertedData">
     </div>
     <div *ngIf="article">
+      <hr color="white"/>
       <app-comment [articleId]="article.id"></app-comment>
     </div>
   </div>

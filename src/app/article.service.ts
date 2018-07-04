@@ -15,8 +15,8 @@ const httpOptions = {
 })
 export class ArticleService {
 
-  // private topUrl = 'http://localhost:3000/article';
-  private topUrl = 'https://api.zzzz1997.com/article';
+  private topUrl = 'http://localhost:3000/article';
+  // private topUrl = 'https://api.zzzz1997.com/article';
 
   constructor(private http: HttpClient) {
   }

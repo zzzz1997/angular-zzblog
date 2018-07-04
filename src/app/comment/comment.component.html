@@ -4,18 +4,18 @@
     <img class="user-icon" src="https://res.zzzz1997.com/image/blog-icon/default_icon.png"/>
   </div>
   <div class="col-sm-10">
-    <textarea class="comment-area" rows="5" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。"></textarea>
+    <textarea class="comment-area" rows="3" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。"></textarea>
     <button class="btn btn-info">发表评论</button>
   </div>
 </div>
 
 <ul *ngIf="comments">
-  <li class="row" *ngFor="let comment of comments">
+  <li class="row" *ngFor="let comment of comments, let i = index">
     <div class="col-sm-2">
       <img class="rounded-circle user-icon" src="{{comment.icon}}">
     </div>
     <div class="col-sm-10">
-      <div>{{comment.username}}</div>
+      <div>{{i}}{{comment.username}}</div>
       <div>{{comment.content}}</div>
       <div>{{comment.createdAt}}</div>
     </div>

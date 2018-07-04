@@ -3,6 +3,22 @@ import { Location } from '@angular/common';
 import { CookieService } from 'ngx-cookie';
 import { HitokotoService } from './hitokoto.service';
 import { Hitokoto } from './hitokoto';
+import {User} from './user';
+
+const defaultNavs = [
+  {name: '主页', tag: 'home'},
+  {name: '写博客', tag: 'write'},
+  {name: '登录', tag: 'login'}
+];
+
+const loginedNavs = [
+  {name: '主页', tag: 'home'},
+  {name: '写博客', tag: 'write'},
+  {name: '登录', tag: 'login', items: [
+      {name: '个人中心', tag: 'hh'},
+      {name: '退出登录', tag: 'hhhh'}
+    ]}
+];
 
 @Component({
   selector: 'app-root',
@@ -10,12 +26,9 @@ import { Hitokoto } from './hitokoto';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  navs = [
-    {name: '主页', tag: 'home'},
-    {name: '写博客', tag: 'write'},
-    {name: '关于', tag: 'about'},
-    {name: '登录', tag: 'login'}
-  ];
+
+  navs = [];
+
   types = [
     {code: 'a', text: '动画'},
     {code: 'b', text: '漫画'},
@@ -39,8 +52,18 @@ export class AppComponent implements OnInit {
   }
 
   private initView(): void {
+    this.findLogin();
     this.getNowPage();
     this.getHitokoto();
+  }
+
+  private findLogin() {
+    if (!this.getCookie('token')) {
+      this.navs = defaultNavs;
+    } else {
+      this.navs = loginedNavs;
+      this.navs[2].name = (<User>this.getCookieObject('user')).username;
+    }
   }
 
   private getNowPage() {
@@ -65,5 +88,13 @@ export class AppComponent implements OnInit {
       }, (error) => {
         console.error(error);
       });
+  }
+
+  private getCookie(key: string) {
+    return this.cookieService.get(key);
+  }
+
+  private getCookieObject(key: string) {
+    return this.cookieService.getObject(key);
   }
 }

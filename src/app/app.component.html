@@ -8,7 +8,17 @@
   <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
     <ul class="navbar-nav"
         *ngFor="let nav of navs">
-      <li class="nav-item"><a [ngClass]="{'nav-link': true, active: nav.tag === currentNav.tag}" href="/{{nav.tag}}">{{nav.name}}</a></li>
+      <li *ngIf="!nav.items; else elseBlock"
+        class="nav-item"><a [ngClass]="{'nav-link': true, active: nav.tag === currentNav.tag}" href="/{{nav.tag}}">{{nav.name}}</a>
+      </li>
+      <ng-template #elseBlock>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">{{nav.name}}</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" *ngFor="let item of nav.items" href="/{{item.tag}}">{{item.name}}</a>
+          </div>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </nav>
@@ -28,7 +38,7 @@
           marginwidth="0"
           marginheight="0"
           height=86
-          src="https://music.163.com/outchain/player?type=2&id=26386807&auto=0&height=66"></iframe>
+          src="https://music.163.com/outchain/player?type=2&id=26060065&auto=0&height=66"></iframe>
   <div *ngIf="hitokoto" class="hikotoko">
     <p class="bracket-left">『</p>
     <p class="hitokoto-content">{{hitokoto.hitokoto}}</p>
