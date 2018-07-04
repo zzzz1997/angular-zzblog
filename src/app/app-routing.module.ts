@@ -6,6 +6,8 @@ import { ArticleComponent } from './article/article.component';
 import { RegisterComponent } from './register/register.component';
 import { AgreementComponent } from './agreement/agreement.component';
 import { WriteComponent } from './write/write.component';
+import { UserComponent } from './user/user.component';
+import { TransitionComponent } from './transition/transition.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'write', component: WriteComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'agreement', component: AgreementComponent }
+  { path: 'agreement', component: AgreementComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'transition/:state', component: TransitionComponent }
 ];
 
 @NgModule({

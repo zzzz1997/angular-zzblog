@@ -14,6 +14,8 @@ import { CookieModule } from 'ngx-cookie';
 import { CommentComponent } from './comment/comment.component';
 import { WriteComponent } from './write/write.component';
 import { QuillModule } from 'ngx-quill';
+import { UserComponent } from './user/user.component';
+import { TransitionComponent } from './transition/transition.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { QuillModule } from 'ngx-quill';
     AgreementComponent,
     VerificationComponent,
     CommentComponent,
-    WriteComponent
+    WriteComponent,
+    UserComponent,
+    TransitionComponent
   ],
   imports: [
     BrowserModule,

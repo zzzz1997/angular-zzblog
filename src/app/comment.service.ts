@@ -16,12 +16,35 @@ export class CommentService {
   /**
    * 获取文章评论
    *
+   * @param articleId 文章id
    * @returns {Observable<Comment[]>} 评论列表
    */
   getComments(articleId): Observable<Comment[]> {
     return this.http.get<Comment[]>(this.url + '/' + articleId)
       .pipe(
         catchError(this.handleError('getComments', []))
+      );
+  }
+
+  /**
+   * 发表评论
+   *
+   * @param authorId 作者id
+   * @param content 评论详情
+   * @param articleId 文章id
+   * @param createdAt 创建时间
+   * @return 是否评论成功
+   */
+  publishComment(authorId, articleId, content, createdAt): Observable<any> {
+    const body = {
+      authorId: authorId,
+      articleId: articleId,
+      content: content,
+      createdAt: createdAt
+    };
+    return this.http.post(this.url + 'publish', body)
+      .pipe(
+        catchError(this.handleError('publishComment', []))
       );
   }
 

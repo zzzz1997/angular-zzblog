@@ -74,8 +74,8 @@ export class RegisterComponent implements OnInit {
       .subscribe(data => {
         if (!data.success) {
           const date = new Date();
-          this.userService.register(username, password, date.getFullYear() +
-            '-' + (date.getMonth() + 1) + '-' + date.getDate())
+          this.userService.register(username, password,
+            date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate())
             .subscribe(data1 => {
               if (data1.success) {
                 console.log(data1);

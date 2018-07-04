@@ -1,0 +1,7 @@
+<h2>个人空间</h2>
+<div *ngIf="currentUser"
+     class="col-sm-6 offset-sm-3">
+  <img class="rounded-circle" src="{{currentUser.icon}}">
+  <p>{{currentUser.username}}</p>
+  <p>待完善</p>
+</div>

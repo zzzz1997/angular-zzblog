@@ -3,20 +3,20 @@ import { Location } from '@angular/common';
 import { CookieService } from 'ngx-cookie';
 import { HitokotoService } from './hitokoto.service';
 import { Hitokoto } from './hitokoto';
-import {User} from './user';
+import { User } from './user';
 
 const defaultNavs = [
-  {name: '主页', tag: 'home'},
-  {name: '写博客', tag: 'write'},
-  {name: '登录', tag: 'login'}
+  { name: '主页', tag: 'home' },
+  { name: '写博客', tag: 'write' },
+  { name: '登录', tag: 'login' }
 ];
 
 const loginedNavs = [
-  {name: '主页', tag: 'home'},
-  {name: '写博客', tag: 'write'},
-  {name: '登录', tag: 'login', items: [
-      {name: '个人中心', tag: 'hh'},
-      {name: '退出登录', tag: 'hhhh'}
+  { name: '主页', tag: 'home' },
+  { name: '写博客', tag: 'write' },
+  { name: '登录', tag: 'login', items: [
+      { name: '个人中心', tag: 'user' },
+      { name: '退出登录', tag: 'transition/1' }
     ]}
 ];
 
@@ -30,13 +30,13 @@ export class AppComponent implements OnInit {
   navs = [];
 
   types = [
-    {code: 'a', text: '动画'},
-    {code: 'b', text: '漫画'},
-    {code: 'c', text: '游戏'},
-    {code: 'd', text: '小说'},
-    {code: 'e', text: '原创'},
-    {code: 'f', text: '来自网络'},
-    {code: 'g', text: '其他'}
+    { code: 'a', text: '动画' },
+    { code: 'b', text: '漫画' },
+    { code: 'c', text: '游戏' },
+    { code: 'd', text: '小说' },
+    { code: 'e', text: '原创' },
+    { code: 'f', text: '来自网络' },
+    { code: 'g', text: '其他' }
   ];
 
   currentNav = {tag: 'default'};

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  TIMEOUT = 10;
+  TIMEOUT = 24 * 60;
 
   isUsernameRight = true;
   isPasswordRight = true;
@@ -67,8 +67,7 @@ export class LoginComponent implements OnInit {
           };
           this.cookieService.putObject('user', user, options);
           this.cookieService.put('token', token, options);
-          alert('登录成功');
-          this.router.navigateByUrl('home');
+          this.router.navigate(['transition', 0]);
         } else {
           alert(data.message);
           verificationComponent.changeVerification();
